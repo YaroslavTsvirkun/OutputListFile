@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <COMReference Include="TaskScheduler.dll">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>e34cb9f1-c7f7-424c-be29-027dcc09363a</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.PowerShell.5.1.ReferenceAssemblies" Version="1.0.0" />
+    <PackageReference Include="Microsoft.PowerShell.5.ReferenceAssemblies" Version="1.1.0" />
+    <PackageReference Include="Microsoft.PowerShell.Commands.Diagnostics" Version="7.1.1" />
+    <PackageReference Include="Microsoft.PowerShell.Commands.Management" Version="7.1.1" />
+    <PackageReference Include="Microsoft.PowerShell.Commands.Utility" Version="7.1.1" />
+    <PackageReference Include="Microsoft.PowerShell.ConsoleHost" Version="7.1.1" />
+    <PackageReference Include="Microsoft.WSMan.Management" Version="7.1.1" />
+    <PackageReference Include="System.Management.Automation" Version="7.1.1" />
+  </ItemGroup>
+
+</Project>

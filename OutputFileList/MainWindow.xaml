@@ -1,0 +1,33 @@
+﻿<Window x:Class="OutputFileList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Main" Height="490" Width="1000">
+    <Grid>
+        <Grid x:Name="RadioButtons" HorizontalAlignment="Left" VerticalAlignment="Top" Height="105" Width="200">
+            <RadioButton x:Name="rbRegistry" IsChecked="True" IsThreeState="True" Content="Registry (not implemented)" HorizontalAlignment="Left" Margin="15,-40,0,0" VerticalAlignment="Center"/>
+            <RadioButton x:Name="rbStartMenu" IsChecked="False" IsThreeState="True" Content="Start Menu (not implemented)" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Center"/>
+            <RadioButton x:Name="rbScheduler" IsChecked="False" IsThreeState="True" Content="Scheduler" HorizontalAlignment="Left" Margin="15,40,0,0" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid x:Name="Buttons" Margin="0,100,0,319">
+            <Button x:Name="btnGetData" Content="Receive" Click="BtnGetDataClick" Height="25" Width="200" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid x:Name="ProgressBars" Margin="0,160,0,254">
+            <ProgressBar x:Name="pbDownloadData" Minimum="0" Maximum="100" Value="0" Height="25" Margin="15,5,15,5"/>
+            <TextBlock Text="{Binding ElementName=pbDownloadData, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+
+        <ListView x:Name="lwListData" Margin="0,225,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="Path" Width="500" Header="Path" DisplayMemberBinding="{Binding Path}"/>
+                    <GridViewColumn x:Name="Name" Width="250" Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn x:Name="Type" Width="100" Header="Type" DisplayMemberBinding="{Binding Type}"/>
+                    <GridViewColumn x:Name="IsSigned" Width="100" Header="IsSigned"  DisplayMemberBinding="{Binding IsSigned}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
